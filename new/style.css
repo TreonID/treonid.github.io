@@ -82,6 +82,7 @@
 }
 
 .btn-3d {
+	min-width: 523px;
 	cursor: pointer;
 }
 
