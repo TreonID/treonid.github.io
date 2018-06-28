@@ -50,6 +50,11 @@
 	padding-bottom: 30px;
 }
 
+.t-modal-body-1 p {
+	font-size: 18px;
+	margin: 0px;
+}
+
 .t-tight {
 	padding-left: 15px;
 }
