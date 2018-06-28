@@ -87,3 +87,8 @@
 	cursor: pointer;
 }
 
+.btn-video {
+	min-width: 523px;
+	cursor: pointer;
+}
+
