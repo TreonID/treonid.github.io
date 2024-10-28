@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <span class="fs-4">Git bad commit</span>
+          </a>
+        </header>
+      </div>
+
+    <div class="container px-4 py-5" id="featured-3">
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-1">
+          <div class="feature col">
+# ---
+# 
+# Что делать, если сделал правки а pull не сделал, а измениня уже есть в origin
+# 
+# ---
+
+# 0. Отменяем merge через терминал vscode
+git merge --abort
+
+# 1. Выносим изменения в отдельную ветку
+git checkout -b <название-новой-ветки>
+
+# 2. Переключаемся на векту которую испортили
+git checkout <название-оригинальной-ветки>
+
+# 3. Смотрим лог чтобы найти предпоследний коммит, когда ещё всё было хорошо
+git log
+
+# 4. Отменяем коммиты до состояния когда всё было хорошо
+git reset --hard <hash предпоследнего коммита, который в origin>
+
+# 5. Тянем изменения из origin
+git pull
+
+# 6. Делаем слияние с веткой в которой новые правки (пункт 1)
+git merge <название-новой-ветки>
+
+# 7. Решаем проблемы merge в vscode и подтверждаем их коммитом
+git commit -m "Merge..."
+
+# 8. Пушим измениня в оригинальную ветку
+git push
+
+          </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
